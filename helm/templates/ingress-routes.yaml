@@ -42,3 +42,11 @@ spec:
     - kind: Service
       name: platform-api
       port: 8080
+  - kind: Rule
+    match: PathPrefix(`/`)
+    middlewares:
+    - name: traefik-auth
+    services:
+    - kind: Service
+      name: platform-frontend
+      port: 3000
