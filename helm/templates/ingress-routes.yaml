@@ -27,20 +27,12 @@ spec:
     - websecure
   routes:
   - kind: Rule
-    match: PathPrefix(`/api/v1/trigger`)
+    match: PathPrefix(`/api`)
     middlewares:
     - name: traefik-auth
     services:
     - kind: Service
       name: trigger-api
-      port: 8080
-  - kind: Rule
-    match: PathPrefix(`/api/v1/platform`)
-    middlewares:
-    - name: traefik-auth
-    services:
-    - kind: Service
-      name: platform-api
       port: 8080
   - kind: Rule
     match: PathPrefix(`/`)
