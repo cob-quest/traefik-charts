@@ -652,9 +652,10 @@ ports:
     tls:
       enabled: true
       # this is the name of a TLSOption definition
-      options: ""
-      certResolver: ""
-      domains: []
+      #options: ""
+      #certResolver: leresolver
+      #domains: 
+      #- main: cob.quest
       # - main: example.com
       #   sans:
       #     - foo.example.com
@@ -709,7 +710,10 @@ tlsOptions: {}
 #   default:
 #     defaultCertificate:
 #       secretName: tls-cert
-tlsStore: {}
+tlsStore:
+    default:
+      defaultCertificate:
+        secretName: tls-cert
 
 service:
   enabled: true
@@ -964,6 +968,7 @@ extraObjects:
         - kind: Service
           name: platform-frontend
           port: 3000
+
 
 # This will override the default Release Namespace for Helm.
 # It will not affect optional CRDs such as `ServiceMonitor` and `PrometheusRules`
