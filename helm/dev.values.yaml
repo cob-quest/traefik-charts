@@ -652,9 +652,10 @@ ports:
     tls:
       enabled: true
       # this is the name of a TLSOption definition
-      options: ""
-      certResolver: ""
-      domains: []
+      #options: ""
+      #certResolver: leresolver
+      #domains: 
+      #- main: cob.quest
       # - main: example.com
       #   sans:
       #     - foo.example.com
